@@ -4,10 +4,10 @@ import axios from 'axios';
 
 dotenv.config();
 
-const openai = new OpenAI({
-    // apiKey: process.env.OPENAI_API_KEY,
-    apiKey: "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"
-});
+// const openai = new OpenAI({
+//     // apiKey: process.env.OPENAI_API_KEY,
+//     apiKey: "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"
+// });
 
 // export async function getEmbedding(text) {
 //     try {
