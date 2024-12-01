@@ -53,10 +53,10 @@ function App() {
             <Database className="h-12 w-12 text-blue-600" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Smart Keyword Search
+            Project A Keyword Search
           </h1>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Search for keywords and discover related content using semantic
+            Search for anything and discover related content using semantic
             matching
           </p>
         </div>
