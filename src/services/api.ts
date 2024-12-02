@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-	baseURL: "/api",
+	// baseURL: "/api",
+	baseURL: "https://project-a-cyop.onrender.com",
 });
 
 export async function searchKeywords(keyword: string) {
