@@ -14,7 +14,7 @@ const pool = new Pool({
     host: "dpg-ct6d683qf0us738ecu60-a",
     database: "keyword_search",
     password: "V0DLXa5nKqWEsDMePXflgaR68UxPlFn8",
-    // port: 5432,
+    port: 10000,
     connectionString: "postgresql://keyword_search_user:V0DLXa5nKqWEsDMePXflgaR68UxPlFn8@dpg-ct6d683qf0us738ecu60-a.singapore-postgres.render.com/keyword_search",
     // connectionString: "postgresql://keyword_search_user:V0DLXa5nKqWEsDMePXflgaR68UxPlFn8@dpg-ct6d683qf0us738ecu60-a/keyword_search",
     ssl: {
