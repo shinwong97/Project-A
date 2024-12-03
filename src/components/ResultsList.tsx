@@ -1,16 +1,14 @@
-import React from 'react';
-
 interface Result {
-  id: number;
-  keyword: string;
-  category?: string;
-  relevanceScore: number;
-  createdAt: string;
+  id: number
+  search_keyword: string
+  category?: string
+  relevanceScore: number
+  createdAt: string
 }
 
 interface ResultsListProps {
-  results: Result[];
-  isLoading: boolean;
+  results: Result[]
+  isLoading: boolean
 }
 
 export function ResultsList({ results, isLoading }: ResultsListProps) {
@@ -23,7 +21,7 @@ export function ResultsList({ results, isLoading }: ResultsListProps) {
           ))}
         </div>
       </div>
-    );
+    )
   }
 
   if (results.length === 0) {
@@ -31,7 +29,7 @@ export function ResultsList({ results, isLoading }: ResultsListProps) {
       <div className="w-full max-w-2xl mt-8 text-center text-gray-500">
         No results found
       </div>
-    );
+    )
   }
 
   return (
@@ -43,7 +41,9 @@ export function ResultsList({ results, isLoading }: ResultsListProps) {
         >
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-lg font-medium text-gray-900">{result.keyword}</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                {result.search_keyword}
+              </h3>
               {result.category && (
                 <span className="text-sm text-gray-500">{result.category}</span>
               )}
@@ -58,5 +58,5 @@ export function ResultsList({ results, isLoading }: ResultsListProps) {
         </div>
       ))}
     </div>
-  );
+  )
 }
