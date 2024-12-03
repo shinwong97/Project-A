@@ -26,7 +26,7 @@ async function createSchema() {
     const createTableQuery = `
   CREATE TABLE keywords (
     id SERIAL PRIMARY KEY,
-    search_keyword VARCHAR(255) NOT NULL,  // Note: changed column name
+    search_keyword VARCHAR(255) NOT NULL,
     embedding REAL[] NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
