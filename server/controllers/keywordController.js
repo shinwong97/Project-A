@@ -35,12 +35,13 @@ const init = async() => {
 
 export async function addKeyword(req, res) {
     const { keyword1 } = req.body;
+	console.log(keyword1,'keyword1')
     await init();
     try {
         // const embedding = await getEmbedding(keyword);
         // const embedding = keyword;
         let arrayTextEmbeded = []
-        if (embedder) {
+        if (embedder && keyword1 ) {
             const result = await embedder(
                 keyword1,
                 PIPELINE_CONFIG.feature_extraction
