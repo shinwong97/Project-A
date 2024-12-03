@@ -10,7 +10,7 @@ const pool = new Pool({
     // database: process.env.DB_NAME,
     // password: process.env.DB_PASSWORD,
     // port: process.env.DB_PORT,
-    // user: "keyword_search_user",
+    user: "keyword_search_user",
     host: "dpg-ct6d683qf0us738ecu60-a",
     database: "keyword_search",
     password: "V0DLXa5nKqWEsDMePXflgaR68UxPlFn8",
