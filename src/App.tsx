@@ -29,6 +29,7 @@ function App() {
   }
 
   const handleAdd = async () => {
+    setIsLoading(true)
     if (!keyword.trim()) {
       toast.error('Please enter a keyword to add')
       return
@@ -37,7 +38,9 @@ function App() {
       await addKeyword(keyword)
       toast.success('Keyword added successfully')
       setKeyword('')
+      setIsLoading(false)
     } catch (error) {
+      setIsLoading(false)
       toast.error('Failed to add keyword')
       console.error('Add error:', error)
     }
@@ -67,6 +70,7 @@ function App() {
             setKeyword={setKeyword}
             onSearch={handleSearch}
             onAdd={handleAdd}
+            isLoading={isLoading}
           />
           <ResultsList results={results} isLoading={isLoading} />
         </div>

@@ -1,14 +1,20 @@
-import React from 'react';
-import { Search } from 'lucide-react';
+import { Search, Loader } from 'lucide-react'
 
 interface SearchBarProps {
-  keyword: string;
-  setKeyword: (value: string) => void;
-  onSearch: () => void;
-  onAdd: () => void;
+  keyword: string
+  setKeyword: (value: string) => void
+  onSearch: () => void
+  onAdd: () => void
+  isLoading?: boolean
 }
 
-export function SearchBar({ keyword, setKeyword, onSearch, onAdd }: SearchBarProps) {
+export function SearchBar({
+  keyword,
+  setKeyword,
+  onSearch,
+  onAdd,
+  isLoading,
+}: SearchBarProps) {
   return (
     <div className="flex gap-4 w-full max-w-2xl">
       <div className="relative flex-1">
@@ -31,8 +37,8 @@ export function SearchBar({ keyword, setKeyword, onSearch, onAdd }: SearchBarPro
         onClick={onAdd}
         className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
       >
-        Add
+        {isLoading ? <Loader /> : 'Add Keywords'}
       </button>
     </div>
-  );
+  )
 }
