@@ -24,7 +24,7 @@ const pool = new Pool({
 
 async function createSchema() {
     const createTableQuery = `
-  CREATE TABLE keywords (
+  CREATE TABLE keyword_search (
     id SERIAL PRIMARY KEY,
     search_keyword VARCHAR(255) NOT NULL,
     embedding REAL[] NOT NULL,

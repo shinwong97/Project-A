@@ -52,7 +52,7 @@ export async function addKeyword(req, res) {
         }
         const embedding = [0.1, 0.2, 0.3];
         const result = await pool.query(
-            "INSERT INTO keywords (search_keyword, embedding) VALUES ($1, $2) RETURNING *", [newKeyword, arrayTextEmbeded]
+            "INSERT INTO keyword_search (search_keyword, embedding) VALUES ($1, $2) RETURNING *", [newKeyword, arrayTextEmbeded]
         );
         console.log(result?.rows[0], "result dwadwad");
         res.json(result?.rows[0]);
