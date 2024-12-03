@@ -124,7 +124,7 @@ export async function searchKeywords(req, res) {
     )
     SELECT 
         id,
-        keyword,
+        search_keyword,
         (
             1.0 / (1.0 + sqrt(
                 ${arrayFindTextEmbed.map((_, i) => 
@@ -132,7 +132,7 @@ export async function searchKeywords(req, res) {
                 ).join(' + ')}
             ))
         ) AS "relevanceScore"
-    FROM keywords, search_embedding
+    FROM keyword_search, search_embedding
     WHERE (
         1.0 / (1.0 + sqrt(
             ${arrayFindTextEmbed.map((_, i) => 
