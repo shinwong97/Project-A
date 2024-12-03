@@ -34,16 +34,17 @@ const init = async() => {
 };
 
 export async function addKeyword(req, res) {
-    const { keyword1 } = req.body;
-	console.log(keyword1,'keyword1')
+    const { keyword } = req.body;
+    console.log(keyword, 'keyword1')
+    const newKeyword = keyword
     await init();
     try {
         // const embedding = await getEmbedding(keyword);
         // const embedding = keyword;
         let arrayTextEmbeded = []
-        if (embedder && keyword1 ) {
+        if (embedder && newKeyword) {
             const result = await embedder(
-                keyword1,
+                newKeyword,
                 PIPELINE_CONFIG.feature_extraction
             );
             console.log(Array.from(result.data), 'add keyword embeded text')
@@ -51,7 +52,7 @@ export async function addKeyword(req, res) {
         }
         const embedding = [0.1, 0.2, 0.3];
         const result = await pool.query(
-            "INSERT INTO keyword (keyword, embedding) VALUES ($1, $2) RETURNING *", [keyword1, arrayTextEmbeded]
+            "INSERT INTO keyword (keyword, embedding) VALUES ($1, $2) RETURNING *", [newKeyword, arrayTextEmbeded]
         );
         console.log(result?.rows[0], "result dwadwad");
         res.json(result?.rows[0]);
