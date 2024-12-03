@@ -26,7 +26,7 @@ async function createSchema() {
     const createTableQuery = `
     CREATE TABLE IF NOT EXISTS keyword (
       id SERIAL PRIMARY KEY,
-      keyword VARCHAR(255) NOT NULL,
+      keywords VARCHAR(255) NOT NULL,
       embedding REAL[] NOT NULL,
       created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     )
