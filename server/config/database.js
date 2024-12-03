@@ -24,7 +24,7 @@ const pool = new Pool({
 
 async function createSchema() {
     const createTableQuery = `
-    CREATE TABLE IF NOT EXISTS keyword (
+    CREATE TABLE IF NOT EXISTS keywords (
       id SERIAL PRIMARY KEY,
       keywords VARCHAR(255) NOT NULL,
       embedding REAL[] NOT NULL,
