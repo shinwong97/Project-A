@@ -34,7 +34,7 @@ const init = async() => {
 };
 
 export async function addKeyword(req, res) {
-    const { keyword } = req.body;
+    const { keyword1 } = req.body;
     await init();
     try {
         // const embedding = await getEmbedding(keyword);
@@ -42,7 +42,7 @@ export async function addKeyword(req, res) {
         let arrayTextEmbeded = []
         if (embedder) {
             const result = await embedder(
-                keyword,
+                keyword1,
                 PIPELINE_CONFIG.feature_extraction
             );
             console.log(Array.from(result.data), 'add keyword embeded text')
@@ -50,10 +50,10 @@ export async function addKeyword(req, res) {
         }
         const embedding = [0.1, 0.2, 0.3];
         const result = await pool.query(
-            "INSERT INTO keyword (keyword, embedding) VALUES ($1, $2) RETURNING *", [keyword, arrayTextEmbeded]
+            "INSERT INTO keyword (keyword, embedding) VALUES ($1, $2) RETURNING *", [keyword1, arrayTextEmbeded]
         );
-        console.log(result.rows[0], "result dwadwad");
-        res.json(result.rows[0]);
+        console.log(result?.rows[0], "result dwadwad");
+        res.json(result?.rows[0]);
     } catch (error) {
         console.error("Error adding keyword:", error);
         res.status(500).json({ error: "Failed to add keyword" });
